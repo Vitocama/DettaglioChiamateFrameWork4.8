@@ -41,8 +41,9 @@ namespace DettagliChiamate
         private void ufficioDelleEntrateToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            FrmdocEntrate doc = new FrmdocEntrate();
+            FormfrmDocEntrate doc = new FormfrmDocEntrate();
             doc.Show();
+           
 
         }
 

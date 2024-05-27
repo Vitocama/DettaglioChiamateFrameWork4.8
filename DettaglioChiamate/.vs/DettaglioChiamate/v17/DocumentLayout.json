@@ -1,12 +1,68 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\VMware\\Desktop\\DetaglioChiamateFrame4.8\\DettaglioChiamate\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0FBDA0E0-4668-4540-BB95-D01C4E539FAF}|DettaglioChiamate\\DettaglioChiamate4.8.csproj|c:\\users\\vmware\\desktop\\detagliochiamateframe4.8\\dettagliochiamate\\dettagliochiamate\\frmdocentrate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0FBDA0E0-4668-4540-BB95-D01C4E539FAF}|DettaglioChiamate\\DettaglioChiamate4.8.csproj|solutionrelative:dettagliochiamate\\frmdocentrate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0FBDA0E0-4668-4540-BB95-D01C4E539FAF}|DettaglioChiamate\\DettaglioChiamate4.8.csproj|C:\\Users\\VMware\\Desktop\\DetaglioChiamateFrame4.8\\DettaglioChiamate\\dettagliochiamate\\frmdocentrate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{0FBDA0E0-4668-4540-BB95-D01C4E539FAF}|DettaglioChiamate\\DettaglioChiamate4.8.csproj|solutionrelative:dettagliochiamate\\frmdocentrate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0FBDA0E0-4668-4540-BB95-D01C4E539FAF}|DettaglioChiamate\\DettaglioChiamate4.8.csproj|C:\\Users\\VMware\\Desktop\\DetaglioChiamateFrame4.8\\DettaglioChiamate\\dettagliochiamate\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0FBDA0E0-4668-4540-BB95-D01C4E539FAF}|DettaglioChiamate\\DettaglioChiamate4.8.csproj|solutionrelative:dettagliochiamate\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Home.cs",
+              "DocumentMoniker": "C:\\Users\\VMware\\Desktop\\DetaglioChiamateFrame4.8\\DettaglioChiamate\\DettaglioChiamate\\Home.cs",
+              "RelativeDocumentMoniker": "DettaglioChiamate\\Home.cs",
+              "ToolTip": "C:\\Users\\VMware\\Desktop\\DetaglioChiamateFrame4.8\\DettaglioChiamate\\DettaglioChiamate\\Home.cs",
+              "RelativeToolTip": "DettaglioChiamate\\Home.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAA/wCwAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T16:48:49.488Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FrmDocEntrate.cs",
+              "DocumentMoniker": "C:\\Users\\VMware\\Desktop\\DetaglioChiamateFrame4.8\\DettaglioChiamate\\DettaglioChiamate\\frmDocEntrate.cs",
+              "RelativeDocumentMoniker": "DettaglioChiamate\\frmDocEntrate.cs",
+              "ToolTip": "C:\\Users\\VMware\\Desktop\\DetaglioChiamateFrame4.8\\DettaglioChiamate\\DettaglioChiamate\\frmDocEntrate.cs",
+              "RelativeToolTip": "DettaglioChiamate\\frmDocEntrate.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAawAsAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T16:47:57.363Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FrmDocEntrate.cs [Progettazione]",
+              "DocumentMoniker": "C:\\Users\\VMware\\Desktop\\DetaglioChiamateFrame4.8\\DettaglioChiamate\\DettaglioChiamate\\frmDocEntrate.cs",
+              "RelativeDocumentMoniker": "DettaglioChiamate\\frmDocEntrate.cs",
+              "ToolTip": "C:\\Users\\VMware\\Desktop\\DetaglioChiamateFrame4.8\\DettaglioChiamate\\DettaglioChiamate\\frmDocEntrate.cs [Progettazione]",
+              "RelativeToolTip": "DettaglioChiamate\\frmDocEntrate.cs [Progettazione]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T16:47:45.518Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
