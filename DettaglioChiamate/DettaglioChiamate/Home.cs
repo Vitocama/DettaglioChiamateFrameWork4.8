@@ -1,4 +1,5 @@
 ﻿
+using DettaglioChiamate;
 using System;
 using System.Configuration;
 using System.Data;
@@ -47,9 +48,11 @@ namespace DettagliChiamate
 
         }
 
-
-
-
+        private void listaChiamatePerClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmElencoChiamatePerCliente _ElencoChiamatePerCliente = new frmElencoChiamatePerCliente();
+            _ElencoChiamatePerCliente.Show();
+        }
     }
 
     internal class FrmdocEntrate

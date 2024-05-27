@@ -89,6 +89,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmElencoChiamatePerCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmElencoChiamatePerCliente.Designer.cs">
+      <DependentUpon>frmElencoChiamatePerCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmDocEntrate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,9 @@
     <Compile Include="SQLControl.cs" />
     <EmbeddedResource Include="FrmDocEntrate.resx">
       <DependentUpon>FrmDocEntrate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmElencoChiamatePerCliente.resx">
+      <DependentUpon>frmElencoChiamatePerCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmListaDettaglio.resx">
       <DependentUpon>FrmListaDettaglio.cs</DependentUpon>
