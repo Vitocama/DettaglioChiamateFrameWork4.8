@@ -1,0 +1,10 @@
+C:\Users\VMware\Desktop\DetaglioChiamateFrame4.8\DettaglioChiamate\DettaglioChiamate\bin\Debug\DettaglioChiamate.exe.config
+C:\Users\VMware\Desktop\DetaglioChiamateFrame4.8\DettaglioChiamate\DettaglioChiamate\bin\Debug\DettaglioChiamate.exe
+C:\Users\VMware\Desktop\DetaglioChiamateFrame4.8\DettaglioChiamate\DettaglioChiamate\bin\Debug\DettaglioChiamate.pdb
+C:\Users\VMware\Desktop\DetaglioChiamateFrame4.8\DettaglioChiamate\DettaglioChiamate\obj\Debug\DettaglioChiamate.csproj.AssemblyReference.cache
+C:\Users\VMware\Desktop\DetaglioChiamateFrame4.8\DettaglioChiamate\DettaglioChiamate\obj\Debug\DettaglioChiamate.Properties.Resources.resources
+C:\Users\VMware\Desktop\DetaglioChiamateFrame4.8\DettaglioChiamate\DettaglioChiamate\obj\Debug\DettaglioChiamate.csproj.GenerateResource.cache
+C:\Users\VMware\Desktop\DetaglioChiamateFrame4.8\DettaglioChiamate\DettaglioChiamate\obj\Debug\DettaglioChiamate.csproj.CoreCompileInputs.cache
+C:\Users\VMware\Desktop\DetaglioChiamateFrame4.8\DettaglioChiamate\DettaglioChiamate\obj\Debug\DettaglioChiamate.exe
+C:\Users\VMware\Desktop\DetaglioChiamateFrame4.8\DettaglioChiamate\DettaglioChiamate\obj\Debug\DettaglioChiamate.pdb
+C:\Users\VMware\Desktop\DetaglioChiamateFrame4.8\DettaglioChiamate\DettaglioChiamate\obj\Debug\DettaglioChiamate.frmHome.resources
