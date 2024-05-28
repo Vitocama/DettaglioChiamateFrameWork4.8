@@ -18,7 +18,9 @@ namespace DettagliChiamate
     public partial class FormfrmDocEntrate : Form
     {
 
-        string connection = "Server=LAPTOP-8OH69FI3\\SQLEXPRESS01;Database=kongnew;Trusted_Connection=True;Encrypt=false";
+        // string connection = "Server=LAPTOP-8OH69FI3\\SQLEXPRESS01;Database=kongnew;Trusted_Connection=True;Encrypt=false";
+        const string connection = "Server=VMWARE\\MSSQLSERVER2019;Database=kongNew;Trusted_Connection=True;Encrypt=false;";
+
         SQLControl tblufficio = new SQLControl();
         DataTable dt = new DataTable();
        
