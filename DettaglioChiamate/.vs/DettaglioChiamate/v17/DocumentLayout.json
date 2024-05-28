@@ -3,20 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\VMware\\Desktop\\DetaglioChiamateFrame4.8\\DettaglioChiamate\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0FBDA0E0-4668-4540-BB95-D01C4E539FAF}|DettaglioChiamate\\DettaglioChiamate4.8.csproj|c:\\users\\vmware\\desktop\\detagliochiamateframe4.8\\dettagliochiamate\\dettagliochiamate\\frmelencochiamatepercliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{0FBDA0E0-4668-4540-BB95-D01C4E539FAF}|DettaglioChiamate\\DettaglioChiamate4.8.csproj|c:\\users\\vmware\\desktop\\detagliochiamateframe4.8\\dettagliochiamate\\dettagliochiamate\\frmelencochiamatepercliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0FBDA0E0-4668-4540-BB95-D01C4E539FAF}|DettaglioChiamate\\DettaglioChiamate4.8.csproj|solutionrelative:dettagliochiamate\\frmelencochiamatepercliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0FBDA0E0-4668-4540-BB95-D01C4E539FAF}|DettaglioChiamate\\DettaglioChiamate4.8.csproj|C:\\Users\\VMware\\Desktop\\DetaglioChiamateFrame4.8\\DettaglioChiamate\\dettagliochiamate\\frmelencochiamatepercliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{0FBDA0E0-4668-4540-BB95-D01C4E539FAF}|DettaglioChiamate\\DettaglioChiamate4.8.csproj|solutionrelative:dettagliochiamate\\frmelencochiamatepercliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0FBDA0E0-4668-4540-BB95-D01C4E539FAF}|DettaglioChiamate\\DettaglioChiamate4.8.csproj|c:\\users\\vmware\\desktop\\detagliochiamateframe4.8\\dettagliochiamate\\dettagliochiamate\\frmdocentrate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0FBDA0E0-4668-4540-BB95-D01C4E539FAF}|DettaglioChiamate\\DettaglioChiamate4.8.csproj|solutionrelative:dettagliochiamate\\frmdocentrate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0FBDA0E0-4668-4540-BB95-D01C4E539FAF}|DettaglioChiamate\\DettaglioChiamate4.8.csproj|c:\\users\\vmware\\desktop\\detagliochiamateframe4.8\\dettagliochiamate\\dettagliochiamate\\frmdocentrate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{0FBDA0E0-4668-4540-BB95-D01C4E539FAF}|DettaglioChiamate\\DettaglioChiamate4.8.csproj|solutionrelative:dettagliochiamate\\frmdocentrate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0FBDA0E0-4668-4540-BB95-D01C4E539FAF}|DettaglioChiamate\\DettaglioChiamate4.8.csproj|C:\\Users\\VMware\\Desktop\\DetaglioChiamateFrame4.8\\DettaglioChiamate\\dettagliochiamate\\frmelencochiamatepercliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0FBDA0E0-4668-4540-BB95-D01C4E539FAF}|DettaglioChiamate\\DettaglioChiamate4.8.csproj|solutionrelative:dettagliochiamate\\frmelencochiamatepercliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0FBDA0E0-4668-4540-BB95-D01C4E539FAF}|DettaglioChiamate\\DettaglioChiamate4.8.csproj|C:\\Users\\VMware\\Desktop\\DetaglioChiamateFrame4.8\\DettaglioChiamate\\dettagliochiamate\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{0FBDA0E0-4668-4540-BB95-D01C4E539FAF}|DettaglioChiamate\\DettaglioChiamate4.8.csproj|solutionrelative:dettagliochiamate\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,49 +22,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FrmDocEntrate.cs",
-              "DocumentMoniker": "C:\\Users\\VMware\\Desktop\\DetaglioChiamateFrame4.8\\DettaglioChiamate\\DettaglioChiamate\\frmDocEntrate.cs",
-              "RelativeDocumentMoniker": "DettaglioChiamate\\frmDocEntrate.cs",
-              "ToolTip": "C:\\Users\\VMware\\Desktop\\DetaglioChiamateFrame4.8\\DettaglioChiamate\\DettaglioChiamate\\frmDocEntrate.cs",
-              "RelativeToolTip": "DettaglioChiamate\\frmDocEntrate.cs",
-              "ViewState": "AQIAAHIAAAAAAAAAAAAwwHYAAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-28T10:35:25.914Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FrmDocEntrate.cs [Progettazione]",
-              "DocumentMoniker": "C:\\Users\\VMware\\Desktop\\DetaglioChiamateFrame4.8\\DettaglioChiamate\\DettaglioChiamate\\frmDocEntrate.cs",
-              "RelativeDocumentMoniker": "DettaglioChiamate\\frmDocEntrate.cs",
-              "ToolTip": "C:\\Users\\VMware\\Desktop\\DetaglioChiamateFrame4.8\\DettaglioChiamate\\DettaglioChiamate\\frmDocEntrate.cs [Progettazione]",
-              "RelativeToolTip": "DettaglioChiamate\\frmDocEntrate.cs [Progettazione]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-28T10:35:16.663Z",
-              "EditorCaption": " [Progettazione]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "frmElencoChiamatePerCliente.cs",
               "DocumentMoniker": "C:\\Users\\VMware\\Desktop\\DetaglioChiamateFrame4.8\\DettaglioChiamate\\DettaglioChiamate\\frmElencoChiamatePerCliente.cs",
               "RelativeDocumentMoniker": "DettaglioChiamate\\frmElencoChiamatePerCliente.cs",
               "ToolTip": "C:\\Users\\VMware\\Desktop\\DetaglioChiamateFrame4.8\\DettaglioChiamate\\DettaglioChiamate\\frmElencoChiamatePerCliente.cs",
               "RelativeToolTip": "DettaglioChiamate\\frmElencoChiamatePerCliente.cs",
-              "ViewState": "AQIAABkAAAAAAAAAAAAhwCUAAAAAAAAA",
+              "ViewState": "AQIAAPoEAAAAAAAAAADwvwgFAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-28T07:25:07.705Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "frmElencoChiamatePerCliente.cs [Progettazione]",
               "DocumentMoniker": "C:\\Users\\VMware\\Desktop\\DetaglioChiamateFrame4.8\\DettaglioChiamate\\DettaglioChiamate\\frmElencoChiamatePerCliente.cs",
               "RelativeDocumentMoniker": "DettaglioChiamate\\frmElencoChiamatePerCliente.cs",
@@ -77,6 +48,19 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-28T07:22:05.892Z",
               "EditorCaption": " [Progettazione]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "App.config",
+              "DocumentMoniker": "C:\\Users\\VMware\\Desktop\\DetaglioChiamateFrame4.8\\DettaglioChiamate\\DettaglioChiamate\\App.config",
+              "RelativeDocumentMoniker": "DettaglioChiamate\\App.config",
+              "ToolTip": "C:\\Users\\VMware\\Desktop\\DetaglioChiamateFrame4.8\\DettaglioChiamate\\DettaglioChiamate\\App.config",
+              "RelativeToolTip": "DettaglioChiamate\\App.config",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAB7AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-05-28T11:03:22.191Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -75,7 +75,7 @@
             // 
             this.dtpDataFatturazione.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDataFatturazione.Location = new System.Drawing.Point(148, 22);
-            this.dtpDataFatturazione.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpDataFatturazione.Margin = new System.Windows.Forms.Padding(2);
             this.dtpDataFatturazione.Name = "dtpDataFatturazione";
             this.dtpDataFatturazione.Size = new System.Drawing.Size(99, 21);
             this.dtpDataFatturazione.TabIndex = 3;
@@ -85,7 +85,7 @@
             // 
             this.dtpFine.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFine.Location = new System.Drawing.Point(536, 24);
-            this.dtpFine.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpFine.Margin = new System.Windows.Forms.Padding(2);
             this.dtpFine.Name = "dtpFine";
             this.dtpFine.Size = new System.Drawing.Size(104, 20);
             this.dtpFine.TabIndex = 4;
@@ -95,7 +95,7 @@
             // 
             this.txtCli.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
             this.txtCli.Location = new System.Drawing.Point(121, 35);
-            this.txtCli.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCli.Margin = new System.Windows.Forms.Padding(2);
             this.txtCli.Name = "txtCli";
             this.txtCli.Size = new System.Drawing.Size(93, 21);
             this.txtCli.TabIndex = 5;
@@ -105,7 +105,7 @@
             // 
             this.dtpInizio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpInizio.Location = new System.Drawing.Point(431, 24);
-            this.dtpInizio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpInizio.Margin = new System.Windows.Forms.Padding(2);
             this.dtpInizio.Name = "dtpInizio";
             this.dtpInizio.Size = new System.Drawing.Size(101, 20);
             this.dtpInizio.TabIndex = 6;
@@ -126,12 +126,13 @@
             // 
             this.chkseleziona.AutoSize = true;
             this.chkseleziona.Location = new System.Drawing.Point(452, 134);
-            this.chkseleziona.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkseleziona.Margin = new System.Windows.Forms.Padding(2);
             this.chkseleziona.Name = "chkseleziona";
             this.chkseleziona.Size = new System.Drawing.Size(96, 17);
             this.chkseleziona.TabIndex = 8;
             this.chkseleziona.Text = "Seleziona tutto";
             this.chkseleziona.UseVisualStyleBackColor = true;
+            this.chkseleziona.CheckedChanged += new System.EventHandler(this.chkseleziona_CheckedChanged_1);
             // 
             // gbxPeriodo
             // 
@@ -152,6 +153,7 @@
             this.cmdDati.TabIndex = 11;
             this.cmdDati.Text = "...";
             this.cmdDati.UseVisualStyleBackColor = true;
+            this.cmdDati.Click += new System.EventHandler(this.cmdDati_Click_1);
             // 
             // gbx
             // 
@@ -196,6 +198,7 @@
             this.cmdEstrai.TabIndex = 14;
             this.cmdEstrai.Text = "Estrai";
             this.cmdEstrai.UseVisualStyleBackColor = true;
+            this.cmdEstrai.Click += new System.EventHandler(this.cmdEstrai_Click);
             // 
             // cmdEsci
             // 
@@ -205,6 +208,7 @@
             this.cmdEsci.TabIndex = 15;
             this.cmdEsci.Text = "Esci";
             this.cmdEsci.UseVisualStyleBackColor = true;
+            this.cmdEsci.Click += new System.EventHandler(this.cmdEsci_Click_1);
             // 
             // frmElencoChiamatePerCliente
             // 
@@ -219,7 +223,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dtpInizio);
             this.Controls.Add(this.dtpFine);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmElencoChiamatePerCliente";
             this.Text = "Elenco fatture per Cliente";
             this.gbxPeriodo.ResumeLayout(false);
