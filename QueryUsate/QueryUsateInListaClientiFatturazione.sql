@@ -48,7 +48,12 @@ INSERT INTO [dbo].[voiptmpFatturazione] (
  AND idcontratto IN ('24GI.VOIP')
 
  ----------utenti voip e portabilita'
-
+ --verifico occorrenze
+ SELECT idDettaglio, COUNT(*) as numero_occorrenze
+FROM VoiptmpFatturazione
+GROUP BY idDettaglio
+HAVING COUNT(*) > 1;
+--
  INSERT INTO [dbo].[voiptmpFatturazione] (
         [orachiamata],
         [data],
