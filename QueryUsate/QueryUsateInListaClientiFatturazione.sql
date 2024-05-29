@@ -181,6 +181,7 @@ SET voiptmpfatturazione.ultimaFatturazione=voipContratti.lastdata
 FROM voiptmpFatturazione 
 JOIN VoipContratti
 ON voiptmpFatturazione.contratto=VoipContratti.id
+where VoipContratti.fatturazione  is not null
 
 --CONTA SECONDI
 

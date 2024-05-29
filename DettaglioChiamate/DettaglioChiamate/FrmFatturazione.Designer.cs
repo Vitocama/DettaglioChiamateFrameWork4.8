@@ -95,6 +95,7 @@
             this.cmdesci.TabIndex = 4;
             this.cmdesci.Text = "Esci";
             this.cmdesci.UseVisualStyleBackColor = true;
+            this.cmdesci.Click += new System.EventHandler(this.cmdesci_Click_1);
             // 
             // FrmFatturazione
             // 

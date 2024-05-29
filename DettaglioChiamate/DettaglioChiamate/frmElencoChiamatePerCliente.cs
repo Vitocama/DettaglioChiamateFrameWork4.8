@@ -700,6 +700,7 @@ VoiptmpFatturazione.idDettaglio=VoiPdettaglio.iD
  FROM voiptmpFatturazione 
  JOIN VoipContratti
  ON voiptmpFatturazione.contratto=VoipContratti.id
+ where VoipContratti.fatturazione  is not null
              ";
 
             fatturazione.ExecQuery(sql);

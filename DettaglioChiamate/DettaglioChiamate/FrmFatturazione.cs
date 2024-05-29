@@ -459,6 +459,7 @@ VoiptmpFatturazione.idDettaglio=VoiPdettaglio.iD
  FROM voiptmpFatturazione 
  JOIN VoipContratti
  ON voiptmpFatturazione.contratto=VoipContratti.id
+where VoipContratti.fatturazione  is not null
              ";
 
             fatturazione.ExecQuery(sql);
@@ -896,13 +897,9 @@ JOIN voiptmpFatturazioneclone ON VoiPofferte.idofferta = voiptmpFatturazioneclon
 
         }
 
-
-
-
-
-
-
-
-
+        private void cmdesci_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
