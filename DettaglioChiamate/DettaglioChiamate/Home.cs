@@ -1,9 +1,6 @@
 ﻿
 using DettaglioChiamate;
 using System;
-using System.Configuration;
-using System.Data;
-using System.Data.Common;
 using System.Windows.Forms;
 
 
@@ -53,9 +50,13 @@ namespace DettagliChiamate
             frmElencoChiamatePerCliente _ElencoChiamatePerCliente = new frmElencoChiamatePerCliente();
             _ElencoChiamatePerCliente.Show();
         }
+
+        private void fatturazioneToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+       FrmFatturazione frmFatturazione = new FrmFatturazione();
+            frmFatturazione.Show();
+        }
     }
 
-    internal class FrmdocEntrate
-    {
-    }
+
 }
