@@ -334,7 +334,7 @@ namespace DettaglioChiamate
 
 
             sql = @"
-            DELETE FROM voipConteggioSecondo ";
+            DELETE FROM voipConteggioSecondi ";
 
 
             fatturazione.ExecQuery(sql);
@@ -352,7 +352,7 @@ namespace DettaglioChiamate
 
 
             sql = @"
-                INSERT INTO voipConteggioSecondo(
+                INSERT INTO voipConteggioSecondi(
                 contratto,
                 SommaDeiSecondi,
                  tipo
@@ -543,11 +543,10 @@ namespace DettaglioChiamate
 
 
             sql = @"
-            UPDATE voiptmpFatturazione
-SET voiptmpFatturazione.scatto =VoiPofferte.Scatto*NchiamateAddebitabili
-FROM VoiPofferte 
-JOIN voiptmpFatturazione ON VoiPofferte.idofferta = voiptmpFatturazione.offerta 
-JOIN voipdettaglio ON voipdettaglio.id = voiptmpFatturazione.idDettaglio;
+ UPDATE voiptmpfatturazione
+ SET SpesaChimata=VoiPofferte.CostoScatto* VoiptmpFatturazione.Scatto
+ FROM VoiptmpFatturazione JOIN VoiPofferte
+ on VoiptmpFatturazione.offerta=VoiPofferte.idofferta
 
 
            ";
@@ -673,10 +672,10 @@ VoiptmpFatturazione.idDettaglio=VoiPdettaglio.iD
 
 
             sql = @"
-             UPDATE voiptmpfatturazione
- SET SpesaChimata=VoiPofferte.SpesaScatto* VoiptmpFatturazione.Scatto
- FROM VoiptmpFatturazione JOIN VoiPofferte
- on VoiptmpFatturazione.offerta=VoiPofferte.idofferta
+                         UPDATE voiptmpfatturazione
+SET SpesaChimata=VoiPofferte.CostoScatto* VoiptmpFatturazione.Scatto
+FROM VoiptmpFatturazione JOIN VoiPofferte
+on VoiptmpFatturazione.offerta=VoiPofferte.idofferta
              ";
 
             fatturazione.ExecQuery(sql);
@@ -695,12 +694,12 @@ VoiptmpFatturazione.idDettaglio=VoiPdettaglio.iD
         {
 
             sql = @"
-            UPDATE voiptmpFatturazione
- SET voiptmpfatturazione.ultimaFatturazione=voipContratti.lastdata
- FROM voiptmpFatturazione 
- JOIN VoipContratti
- ON voiptmpFatturazione.contratto=VoipContratti.id
- where VoipContratti.fatturazione  is not null
+                       UPDATE voiptmpFatturazione
+SET voiptmpfatturazione.ultimaFatturazione=voipContratti.lastdata
+FROM voiptmpFatturazione 
+JOIN VoipContratti
+ON voiptmpFatturazione.contratto=VoipContratti.idContratto
+where VoipContratti.fatturazione  is not null
              ";
 
             fatturazione.ExecQuery(sql);
@@ -798,7 +797,7 @@ INSERT INTO [dbo].[voiptmpFatturazione] (
         voipdettaglio.orachiamata,
         voipdettaglio.data,
 	    voipdettaglio.id,
-        VoipContratti.id AS [contratto],
+        VoipContratti.idContratto AS [contratto],
         VoipContratti.nome,
         Contratti.CodCli,
         VoipContratti.voip,
@@ -812,12 +811,12 @@ INSERT INTO [dbo].[voiptmpFatturazione] (
     JOIN 
         voipdettaglio ON voipdettaglio.chiamante = VoipContratti.portabilita 
     JOIN 
-        Contratti ON VoipContratti.id = Contratti.IdContratto 
+        Contratti ON VoipContratti.idContratto = Contratti.IdContratto 
     WHERE
        voipdettaglio.data >= @inizio AND voipdettaglio.data <= @fine
 ";
 
-            sql += " AND idcontratto IN (";
+            sql += " AND  voipcontratti.idcontratto IN (";
 
             foreach (string item in listaClienti)
             {
@@ -850,7 +849,7 @@ INSERT INTO [dbo].[voiptmpFatturazione] (
         voipdettaglio.orachiamata,
         voipdettaglio.data,
 	    voipdettaglio.id,
-        VoipContratti.id AS [contratto],
+        VoipContratti.idContratto AS [contratto],
         VoipContratti.nome,
         Contratti.CodCli,
         VoipContratti.voip,
@@ -865,12 +864,12 @@ INSERT INTO [dbo].[voiptmpFatturazione] (
     JOIN 
         voipdettaglio ON voipdettaglio.chiamante = VoipContratti.voip
     JOIN 
-        Contratti ON VoipContratti.id = Contratti.IdContratto 
+        Contratti ON VoipContratti.idContratto = Contratti.IdContratto 
 
     WHERE 
        voipdettaglio.data >= @inizio AND voipdettaglio.data <= @fine ";
 
-            sql += " AND idcontratto IN (";
+            sql += " AND  voipcontratti.idcontratto IN (";
 
             /*
             *

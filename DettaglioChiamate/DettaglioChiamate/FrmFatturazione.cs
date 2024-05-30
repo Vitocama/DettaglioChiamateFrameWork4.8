@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Contracts;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,17 +17,17 @@ namespace DettaglioChiamate
 
         // SqlConnection conn = new SqlConnection("Data Source=SERVER2019;Initial Catalog=Voip1;Persist Security Info=True;User ID=sa;Password=Caronte00;TrustServerCertificate=True;Encrypt=False");
         string connection = "Server=VMWARE\\MSSQLSERVER2019;Database=kongNew;Trusted_Connection=True;Encrypt=false;";
-            // string connection = "Server=LAPTOP-8OH69FI3\\SQLEXPRESS01;Database=kongnew;Trusted_Connection=True;Encrypt=false";
+        // string connection = "Server=LAPTOP-8OH69FI3\\SQLEXPRESS01;Database=kongnew;Trusted_Connection=True;Encrypt=false";
 
-            private int mesiDiFatturazione = 2;
+        private int mesiDiFatturazione = 2;
 
-            DataTable dt = new DataTable();
+        DataTable dt = new DataTable();
 
-            //  string connection = System.Configuration.ConfigurationManager.ConnectionStrings["cnKong"].ConnectionString;
-            SQLControl fatturazione = new SQLControl();
-            string sql = "";
-            DataTable dtofferta = new DataTable();
-            public FrmFatturazione()
+        //  string connection = System.Configuration.ConfigurationManager.ConnectionStrings["cnKong"].ConnectionString;
+        SQLControl fatturazione = new SQLControl();
+        string sql = "";
+        DataTable dtofferta = new DataTable();
+        public FrmFatturazione()
         {
             InitializeComponent();
         }
@@ -118,20 +119,20 @@ namespace DettaglioChiamate
             }
             /*
              *
-             *Dalla tabella voiptmpFatturazione creo un 
+             *Dalla tabella voiptmpFatturazioneALL creo un 
              *DataTable 
              *
              *
              */
 
 
-            sql = "SELECT * FROM voiptmpFatturazione ";
+            sql = "SELECT * FROM voiptmpFatturazioneALL ";
 
             fatturazione.ExecQuery(sql);
 
             if (fatturazione.HasException(true))
             {
-                MessageBox.Show("Errore alla tabella voiptmpFatturazione");
+                MessageBox.Show("Errore alla tabella voiptmpFatturazioneALL");
                 return;
             }
             if (fatturazione.RecordCount == 0)
@@ -151,7 +152,7 @@ namespace DettaglioChiamate
 
 
             sql = @"
-            DELETE FROM voipConteggioSecondo ";
+            DELETE FROM voipConteggioSecondi ";
 
             fatturazione.ExecQuery(sql);
 
@@ -168,17 +169,17 @@ namespace DettaglioChiamate
 
 
             sql = @"
-INSERT INTO voipConteggioSecondo(
+INSERT INTO voipConteggioSecondi(
   contratto,
 SommaDeiSecondi,
   tipo
 )
 SELECT 
   contratto,
- sum(datediff(second,'0:0:0',voiptmpFatturazione.durata)) AS sommaDeiSecondi,
+ sum(datediff(second,'0:0:0',voiptmpFatturazioneALL.durata)) AS sommaDeiSecondi,
  tipo
 FROM 
-  voiptmpFatturazione
+  voiptmpFatturazioneALL
   GROUP BY 
   contratto,
   tipo;
@@ -213,7 +214,7 @@ FROM
             //TabOfferta();
             // TabTmpFatturazione();
 
-            sql = "SELECT * FROM voiptmpFatturazione";
+            sql = "SELECT * FROM voiptmpFatturazioneALL";
             fatturazione.ExecQuery(sql);
             if (fatturazione.HasException(true))
                 return dt = null;
@@ -247,7 +248,7 @@ FROM
                 Nchiamate, 
                 NchiamateAddebitabili, 
                 Scatto,  spesa 
-                FROM   voiptmpfatturazioneClone
+                FROM   voiptmpfatturazioneCloneALL
                 order by contratto
                 ";
 
@@ -290,11 +291,11 @@ FROM
 
 
             sql = @"
-                       UPDATE voiptmpFatturazione
-SET voiptmpFatturazione.scatto =voipofferte.Scatto*NchiamateAddebitabili
+                       UPDATE voiptmpFatturazioneALL
+SET voiptmpFatturazioneALL.scatto =voipofferte.Scatto*NchiamateAddebitabili
 FROM voipofferte 
-JOIN voiptmpFatturazione ON voipofferte.idofferta = voiptmpFatturazione.offerta 
-JOIN voipdettaglio ON voipdettaglio.id = voiptmpFatturazione.idDettaglio;
+JOIN voiptmpFatturazioneALL ON voipofferte.idofferta = voiptmpFatturazioneALL.offerta 
+JOIN voipdettaglio ON voipdettaglio.id = voiptmpFatturazioneALL.idDettaglio;
 
            ";
 
@@ -317,13 +318,13 @@ JOIN voipdettaglio ON voipdettaglio.id = voiptmpFatturazione.idDettaglio;
              *
              */
             sql = @"
-                UPDATE voiptmpfatturazione
+                UPDATE voiptmpfatturazioneALL
                 SET Nchiamate=1";
             fatturazione.ExecQuery(sql);
 
             if (fatturazione.HasException(true))
             {
-                MessageBox.Show("Errore alla tabella voipTmpFatturazione");
+                MessageBox.Show("Errore alla tabella voiptmpFatturazioneALL");
                 return fatturazione.Exception;
             }
             return "";
@@ -341,13 +342,13 @@ JOIN voipdettaglio ON voipdettaglio.id = voiptmpFatturazione.idDettaglio;
              */
             sql = @"
 
-            UPDATE voiptmpfatturazione
+            UPDATE voiptmpfatturazioneALL
             SET     NchiamateAddebitabili=case 
             WHEN importo=0 THEN 0 ELSE 1 
             END
-            FROM voiptmpFatturazione 
+            FROM voiptmpFatturazioneALL 
             JOIN voipdettaglio 
-            ON voiptmpFatturazione.iddettaglio=voipdettaglio.id
+            ON voiptmpFatturazioneALL.iddettaglio=voipdettaglio.id
 
             ";
 
@@ -355,7 +356,7 @@ JOIN voipdettaglio ON voipdettaglio.id = voiptmpFatturazione.idDettaglio;
 
             if (fatturazione.HasException(true))
             {
-                MessageBox.Show("Errore alla tabella voiptmpFatturazione");
+                MessageBox.Show("Errore alla tabella voiptmpFatturazioneALL");
                 return fatturazione.Exception;
             }
             return "";
@@ -376,11 +377,11 @@ JOIN voipdettaglio ON voipdettaglio.id = voiptmpFatturazione.idDettaglio;
 
 
             sql = @"
-UPDATE voiptmpFatturazione
+UPDATE voiptmpFatturazioneALL
 SET descrizione= voipTipoChiamate.Descrizione
-FROM voiptmpFatturazione JOIN
+FROM voiptmpFatturazioneALL JOIN
 voipTipoChiamate 
-ON voiptmpFatturazione.tipo=VoiPTipoChiamate.tipo
+ON voiptmpFatturazioneALL.tipo=VoiPTipoChiamate.tipo
             ";
             fatturazione.ExecQuery(sql);
 
@@ -397,13 +398,13 @@ ON voiptmpFatturazione.tipo=VoiPTipoChiamate.tipo
         private string ClnTipo()
         {
             sql = @"
-            UPDATE voiptmpFatturazione
-SET voiptmpFatturazione.tipo=VoiPdettaglio.tipo
-FROM VoiptmpFatturazione
+            UPDATE voiptmpFatturazioneALL
+SET voiptmpFatturazioneALL.tipo=VoiPdettaglio.tipo
+FROM voiptmpFatturazioneALL
 JOIN VoiPdettaglio
-ON VoiPdettaglio.id=voiptmpFatturazione.idDettaglio
+ON VoiPdettaglio.id=voiptmpFatturazioneALL.idDettaglio
 where
-VoiptmpFatturazione.idDettaglio=VoiPdettaglio.iD
+voiptmpFatturazioneALL.idDettaglio=VoiPdettaglio.iD
 
             ";
 
@@ -431,18 +432,18 @@ VoiptmpFatturazione.idDettaglio=VoiPdettaglio.iD
 
 
             sql = @"
-                    UPDATE voiptmpFatturazione
+                    UPDATE voiptmpFatturazioneALL
  SET secondiAddebitabili=
  CASE WHEN importo=0 
  THEN 0 ELSE secondi END
- FROM voiptmpFatturazione JOIN voipdettaglio 
- ON voiptmpfatturazione.idDettaglio=voipdettaglio.id
+ FROM voiptmpFatturazioneALL JOIN voipdettaglio 
+ ON voiptmpFatturazioneALL.idDettaglio=voipdettaglio.id
                     ";
 
             fatturazione.ExecQuery(sql);
             if (fatturazione.HasException(true))
             {
-                MessageBox.Show("Errore alla tabella voiptmpFatturazione");
+                MessageBox.Show("Errore alla tabella voiptmpFatturazioneALL");
                 return fatturazione.Exception;
             }
             return "";
@@ -453,13 +454,14 @@ VoiptmpFatturazione.idDettaglio=VoiPdettaglio.iD
         private string ClnLastFatturazione()
         {
 
-            sql = @"
-            UPDATE voiptmpFatturazione
- SET voiptmpfatturazione.ultimaFatturazione=voipContratti.lastdata
- FROM voiptmpFatturazione 
+sql=@"
+            UPDATE voiptmpFatturazioneALL
+ SET voiptmpFatturazioneALL.ultimaFatturazione = voipContratti.lastdata
+ FROM voiptmpFatturazioneALL
  JOIN VoipContratti
- ON voiptmpFatturazione.contratto=VoipContratti.id
-where VoipContratti.fatturazione  is not null
+ ON voiptmpFatturazioneALL.contratto = VoipContratti.idContratto
+where VoipContratti.fatturazione is not null
+
              ";
 
             fatturazione.ExecQuery(sql);
@@ -481,10 +483,11 @@ where VoipContratti.fatturazione  is not null
 
 
             sql = @"
-             UPDATE voiptmpfatturazione
- SET SpesaChimata=VoiPofferte.SpesaScatto* VoiptmpFatturazione.Scatto
- FROM VoiptmpFatturazione JOIN VoiPofferte
- on VoiptmpFatturazione.offerta=VoiPofferte.idofferta
+             	   
+	   UPDATE voiptmpFatturazioneALL
+SET SpesaChimata=VoiPofferte.CostoScatto* voiptmpFatturazioneALL.Scatto
+FROM voiptmpFatturazioneALL JOIN VoiPofferte
+on voiptmpFatturazioneALL.offerta=VoiPofferte.idofferta
              ";
 
             fatturazione.ExecQuery(sql);
@@ -505,7 +508,7 @@ where VoipContratti.fatturazione  is not null
 
             fatturazione = new SQLControl(connection);
             Cursor = Cursors.WaitCursor;
-            sql = "delete from voiptmpfatturazione";
+            sql = "delete from voiptmpFatturazioneALL";
             fatturazione.ExecQuery(sql);
             if (fatturazione.HasException(true))
             {
@@ -538,13 +541,13 @@ where VoipContratti.fatturazione  is not null
             fatturazione = new SQLControl(connection);
 
             /*
-             *popolamente della tabella voiptmpFatturazione
+             *popolamente della tabella voiptmpFatturazioneALL
              *
              */
             sql = @"
 
 
-INSERT INTO [dbo].[voiptmpFatturazione] (
+INSERT INTO [dbo].[voiptmpFatturazioneALL] (
     [orachiamata],
     [data],
     [idDettaglio],
@@ -560,7 +563,7 @@ SELECT
     voipdettaglio.orachiamata,
     voipdettaglio.data,
     voipdettaglio.id,
-    voipContratti.id AS [contratto],
+    voipContratti.idContratto AS [contratto],
     voipContratti.nome,
     Contratti.CodCli,
     voipContratti.portabilita,
@@ -572,22 +575,23 @@ FROM
 JOIN 
     voipdettaglio ON voipdettaglio.chiamante = voipContratti.portabilita
 JOIN 
-    Contratti ON voipContratti.id = Contratti.IdContratto
+    Contratti ON voipContratti.idContratto = Contratti.IdContratto
 WHERE 
- voipdettaglio.data >= @inizio AND voipdettaglio.data <= @fine 
+ voipdettaglio.data >=@inizio AND voipdettaglio.data <= @fine  
 
 ";
 
 
-
-
+            //string inizioFormatted = inizio.ToString("dd/MM/yyyy");
+            //string fineFormatted = fine.ToString("dd/MM/yyyy");
             fatturazione.AddParam("@inizio", inizio);
-            fatturazione.AddParam("@fine", fine);
+            fatturazione.AddParam("@fine", fine );
             fatturazione.ExecQuery(sql);
 
 
             sql = @"
-	INSERT INTO [dbo].[voiptmpFatturazione] (
+	
+	INSERT INTO [dbo].[voiptmpFatturazioneALL] (
     [orachiamata],
     [data],
     [idDettaglio],
@@ -603,7 +607,7 @@ SELECT
     voipdettaglio.orachiamata,
     voipdettaglio.data,
     voipdettaglio.id,
-    voipContratti.id AS [contratto],
+    voipContratti.idContratto AS [contratto],
     voipContratti.nome,
     Contratti.CodCli,
     voipContratti.voip,
@@ -615,8 +619,7 @@ FROM
 JOIN 
     voipdettaglio ON voipdettaglio.chiamante = voipContratti.voip
 JOIN 
-    Contratti ON voipContratti.id = Contratti.IdContratto
-
+    Contratti ON voipContratti.idcontratto = Contratti.IdContratto
 WHERE 
     voipdettaglio.data >= @inizio AND voipdettaglio.data <= @fine 
    
@@ -650,7 +653,7 @@ WHERE
         }
         private string PopolamentoParzialeDiClone()
         {
-            sql = @"DELETE FROM voiptmpfatturazioneClone";
+            sql = @"DELETE FROM voiptmpFatturazioneCLONEALL";
 
             fatturazione.ExecQuery(sql);
             if (fatturazione.HasException(true))
@@ -660,7 +663,7 @@ WHERE
             }
 
 
-            sql = @" DBCC CHECKIDENT ('voiptmpFatturazioneClone', RESEED, 0); ";
+            sql = @" DBCC CHECKIDENT ('voiptmpFatturazioneCLONEALL', RESEED, 0); ";
 
             fatturazione.ExecQuery(sql);
             if (fatturazione.HasException(true))
@@ -672,7 +675,7 @@ WHERE
             sql = @" 
             
 
-            INSERT INTO voiptmpFatturazioneClone(contratto, Tipo, secondiaddebitabili, nome, CodCli, telefono, descrizione)
+            INSERT INTO voiptmpFatturazioneCLONEALL(contratto, Tipo, secondiaddebitabili, nome, CodCli, telefono, descrizione)
             SELECT
               
                 contratto,
@@ -683,7 +686,7 @@ WHERE
                 telefono,
                 descrizione
             FROM
-                voiptmpFatturazione
+                voiptmpFatturazioneALL
             GROUP BY
                 contratto, Tipo, nome, CodCli, telefono, descrizione;
             ";
@@ -707,19 +710,19 @@ WHERE
              *
              */
             sql = @"
-		UPDATE voiptmpFatturazioneClone
-SET voiptmpFatturazioneClone.secondi = sec.secondi
-FROM voiptmpFatturazioneClone
+		UPDATE voiptmpFatturazioneCLONEALL
+SET voiptmpFatturazioneCLONEALL.secondi = sec.secondi
+FROM voiptmpFatturazioneCLONEALL
 JOIN (
     SELECT 
         contratto, 
         Tipo, 
         SUM(secondi) AS secondi
     FROM 
-        voiptmpFatturazione 
+        voiptmpFatturazioneALL 
     GROUP BY 
         contratto, Tipo
-)as sec ON voiptmpFatturazioneClone.contratto = sec.contratto AND voiptmpFatturazioneClone.Tipo = sec.Tipo;
+)as sec ON voiptmpFatturazioneCLONEALL.contratto = sec.contratto AND voiptmpFatturazioneCLONEALL.Tipo = sec.Tipo;
 ";
 
             fatturazione.ExecQuery(sql);
@@ -738,19 +741,19 @@ JOIN (
 
             sql = @"
 
-            UPDATE voiptmpFatturazioneClone
-            SET voiptmpFatturazioneClone.Nchiamate= chiamata.Nchiamate
-            FROM voiptmpFatturazioneClone
+            UPDATE voiptmpFatturazioneCLONEALL
+            SET voiptmpFatturazioneCLONEALL.Nchiamate= chiamata.Nchiamate
+            FROM voiptmpFatturazioneCLONEALL
             JOIN (
                 SELECT
                     contratto, 
                     Tipo, 
                     SUM(Nchiamate) AS Nchiamate
                 FROM 
-                    voiptmpFatturazione 
+                    voiptmpFatturazioneALL 
                 GROUP BY 
                     contratto, Tipo
-            )as chiamata ON voiptmpFatturazioneClone.contratto = chiamata.contratto AND voiptmpFatturazioneClone.Tipo = chiamata.Tipo;
+            )as chiamata ON voiptmpFatturazioneCLONEALL.contratto = chiamata.contratto AND voiptmpFatturazioneCLONEALL.Tipo = chiamata.Tipo;
 ";
 
 
@@ -769,19 +772,19 @@ JOIN (
         {
             sql = @"
 
-            UPDATE voiptmpFatturazioneClone
-            SET voiptmpFatturazioneClone.NchiamateAddebitabili= chiamata.NchiamateAddebitabili
-            FROM voiptmpFatturazioneClone
+            UPDATE voiptmpFatturazioneCLONEALL
+            SET voiptmpFatturazioneCLONEALL.NchiamateAddebitabili= chiamata.NchiamateAddebitabili
+            FROM voiptmpFatturazioneCLONEALL
             JOIN (
                 SELECT
                     contratto, 
                     Tipo, 
                     SUM(NchiamateAddebitabili) AS NchiamateAddebitabili
                 FROM 
-                    voiptmpFatturazione 
+                    voiptmpFatturazioneALL 
                 GROUP BY 
                     contratto, Tipo
-            ) chiamata ON voiptmpFatturazioneClone.contratto = chiamata.contratto AND voiptmpFatturazioneClone.Tipo = chiamata.Tipo;
+            ) chiamata ON voiptmpFatturazioneCLONEALL.contratto = chiamata.contratto AND voiptmpFatturazioneCLONEALL.Tipo = chiamata.Tipo;
             ";
 
             fatturazione.ExecQuery(sql);
@@ -798,12 +801,12 @@ JOIN (
         {
             sql = @"
 
-            UPDATE voiptmpfatturazioneclone
-            SET offerta=voiptmpFatturazione.offerta
-            FROM voiptmpfatturazioneClone 
-            JOIN voiptmpFatturazione 
-            ON voiptmpFatturazione.contratto=voiptmpfatturazioneClone.contratto 
-            AND voiptmpFatturazione.tipo=voiptmpfatturazioneClone.Tipo
+            UPDATE voiptmpFatturazioneCLONEALL
+            SET offerta=voiptmpFatturazioneALL.offerta
+            FROM voiptmpFatturazioneCLONEALL 
+            JOIN voiptmpFatturazioneALL 
+            ON voiptmpFatturazioneALL.contratto=voiptmpFatturazioneCLONEALL.contratto 
+            AND voiptmpFatturazioneALL.tipo=voiptmpFatturazioneCLONEALL.Tipo
 ";
             fatturazione.ExecQuery(sql);
             if (fatturazione.HasException(true))
@@ -820,12 +823,12 @@ JOIN (
         {
             sql = @"
 
-                    UPDATE voiptmpFatturazione
+                    UPDATE voiptmpFatturazioneALL
         SET secondiAddebitabili=
         CASE WHEN importo=0 
         THEN 0 ELSE secondi END
-        FROM voiptmpFatturazione JOIN voipdettaglio
-        ON voiptmpfatturazione.idDettaglio=voipdettaglio.id";
+        FROM voiptmpFatturazioneALL JOIN voipdettaglio
+        ON voiptmpFatturazioneALL.idDettaglio=voipdettaglio.id";
 
             fatturazione.ExecQuery(sql);
             if (fatturazione.HasException(true))
@@ -841,10 +844,10 @@ JOIN (
         private string upScattoClone()
         {
             sql = @"
-                       UPDATE voiptmpFatturazioneClone
-SET voiptmpFatturazioneclone.scatto =ROUND(VoiPofferte.Scatto*voiptmpfatturazioneClone.NchiamateAddebitabili,2)
+                       UPDATE voiptmpFatturazioneCLONEALL
+SET voiptmpFatturazioneCLONEALL.scatto =ROUND(VoiPofferte.Scatto*voiptmpFatturazioneCLONEALL.NchiamateAddebitabili,2)
 FROM VoiPofferte
-JOIN voiptmpFatturazioneclone ON VoiPofferte.idofferta = voiptmpFatturazioneclone.offerta
+JOIN voiptmpFatturazioneCLONEALL ON VoiPofferte.idofferta = voiptmpFatturazioneCLONEALL.offerta
              ";
 
             fatturazione.ExecQuery(sql);
@@ -863,7 +866,7 @@ JOIN voiptmpFatturazioneclone ON VoiPofferte.idofferta = voiptmpFatturazioneclon
 
         private bool controlloEsistenzaOfferta()
         {
-            sql = @"SELECT * FROM voiptmpFatturazione 
+            sql = @"SELECT * FROM voiptmpFatturazioneALL 
                    WHERE offerta=0";
             fatturazione.ExecQuery(sql);
             if (fatturazione.RecordCount > 0)
@@ -873,7 +876,7 @@ JOIN voiptmpFatturazioneclone ON VoiPofferte.idofferta = voiptmpFatturazioneclon
             return false;
         }
 
-         
+
 
 
 
