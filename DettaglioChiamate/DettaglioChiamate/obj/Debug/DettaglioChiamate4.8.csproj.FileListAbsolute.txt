@@ -85,3 +85,5 @@ C:\Users\Vito\Desktop\DetaglioChiamateFrame4.8\DettaglioChiamate\DettaglioChiama
 C:\Users\Vito\Desktop\DetaglioChiamateFrame4.8\DettaglioChiamate\DettaglioChiamate\bin\Debug\System.ValueTuple.xml
 C:\Users\Vito\Desktop\DetaglioChiamateFrame4.8\DettaglioChiamate\DettaglioChiamate\obj\Debug\DettaglioChiamate4.8.csproj.CopyComplete
 C:\Users\Vito\Desktop\DetaglioChiamateFrame4.8\DettaglioChiamate\DettaglioChiamate\obj\Debug\DettaglioChiamate.frmElencoChiamatePerCliente.resources
+C:\Users\VMware\Desktop\DetaglioChiamateFrame4.8\DettaglioChiamate\DettaglioChiamate\obj\Debug\DettaglioChiamate.frmElencoChiamatePerCliente.resources
+C:\Users\VMware\Desktop\DetaglioChiamateFrame4.8\DettaglioChiamate\DettaglioChiamate\obj\Debug\DettaglioChiamate.FrmFatturazione.resources

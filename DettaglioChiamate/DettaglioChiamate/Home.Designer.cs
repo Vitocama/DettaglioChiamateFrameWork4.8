@@ -46,45 +46,46 @@
             this.fatturazioneToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1067, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // elencoChiamateToolStripMenuItem
             // 
             this.elencoChiamateToolStripMenuItem.Name = "elencoChiamateToolStripMenuItem";
-            this.elencoChiamateToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
+            this.elencoChiamateToolStripMenuItem.Size = new System.Drawing.Size(108, 20);
             this.elencoChiamateToolStripMenuItem.Text = "Elenco Chiamate";
             this.elencoChiamateToolStripMenuItem.Click += new System.EventHandler(this.elencoChiamateToolStripMenuItem_Click);
             // 
             // ufficioDelleEntrateToolStripMenuItem
             // 
             this.ufficioDelleEntrateToolStripMenuItem.Name = "ufficioDelleEntrateToolStripMenuItem";
-            this.ufficioDelleEntrateToolStripMenuItem.Size = new System.Drawing.Size(155, 24);
+            this.ufficioDelleEntrateToolStripMenuItem.Size = new System.Drawing.Size(122, 20);
             this.ufficioDelleEntrateToolStripMenuItem.Text = "Ufficio delle Entrate";
             this.ufficioDelleEntrateToolStripMenuItem.Click += new System.EventHandler(this.ufficioDelleEntrateToolStripMenuItem_Click);
             // 
             // listaChiamatePerClienteToolStripMenuItem
             // 
             this.listaChiamatePerClienteToolStripMenuItem.Name = "listaChiamatePerClienteToolStripMenuItem";
-            this.listaChiamatePerClienteToolStripMenuItem.Size = new System.Drawing.Size(196, 24);
+            this.listaChiamatePerClienteToolStripMenuItem.Size = new System.Drawing.Size(157, 20);
             this.listaChiamatePerClienteToolStripMenuItem.Text = "Lista Chiamate per Cliente";
             this.listaChiamatePerClienteToolStripMenuItem.Click += new System.EventHandler(this.listaChiamatePerClienteToolStripMenuItem_Click);
             // 
             // fatturazioneToolStripMenuItem
             // 
             this.fatturazioneToolStripMenuItem.Name = "fatturazioneToolStripMenuItem";
-            this.fatturazioneToolStripMenuItem.Size = new System.Drawing.Size(104, 24);
+            this.fatturazioneToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
             this.fatturazioneToolStripMenuItem.Text = "Fatturazione";
+            this.fatturazioneToolStripMenuItem.Click += new System.EventHandler(this.fatturazioneToolStripMenuItem_Click);
             // 
             // FrHome
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrHome";
             this.Text = "Dettagli Chiama";
             this.menuStrip1.ResumeLayout(false);
