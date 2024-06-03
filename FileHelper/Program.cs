@@ -5,52 +5,67 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using FileHelpers;
+using Microsoft.Data.SqlClient;
+using System.Data;
+using FileHelpers.Converters;
+using System.Collections;
 
 namespace FileHelper.Entities
 {
     internal class Program
     {
+
+       
         private static void Main(string[] args)
-        {
-            using (KongnewContext context = new KongnewContext())
-            {
+             { List<UfficioFILE> ufficioFileList;
+            DataTable dt = new DataTable();
+
+            using (SqlConnection sqlConnection = new SqlConnection("Server = VMWARE\\MSSQLSERVER2019; Database = kongnew; Trusted_Connection = True; Encrypt = false;"))
+            { 
+                sqlConnection.Open();
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("SELECT * FROM VoiPufficio", sqlConnection);
+                sqlDataAdapter.Fill(dt);
+            }
+
                 // Recupera la lista di tutte le righe di VoiPufficio dal database
-                List<VoiPufficio> uffici = context.VoiPufficios.ToList();
+                ufficioFileList = (from DataRow  u in dt.Rows
+                                            select new UfficioFILE
+                                            {
 
-                // Converte la lista di VoiPufficio in una lista di UfficioFILE
-                var ufficioFileList = uffici.Select(u => new UfficioFILE
-                {
-                    Tiporecord = u.Tiporecord,
-                    Cf = u.Cf,
-                    Cognome = u.Cognome,
-                    Nome = u.Nome,
-                    Sesso = u.Sesso,
-                    Dtnascita = u.Dtnascita,
-                    Luogonascita = u.Luogonascita,
-                    Prov = u.Prov,
-                    Denominazione = u.Denominazione,
-                    Comunedomicilio = u.Comunedomicilio,
-                    Siglacomunedomicilio = u.Siglacomunedomicilio,
-                    EstremiContratto = u.EstremiContratto,
-                    Tipotariffa = u.Tipotariffa,
-                    Destinazioneuso = u.Destinazioneuso,
-                    Tipocontratto = u.Tipocontratto,
-                    Tipologiautenza = u.Tipologiautenza,
-                    Datainizio = u.Datainizio,
-                    Numeroiniziale = u.Numeroiniziale,
-                    Numerofinale = u.Numerofinale,
-                    Indirizzo = u.Indirizzo,
-                    Codicecomune = u.Codicecomune,
-                    Mesifatturazione = u.Mesifatturazione,
-                    Costoannualericariche = u.Costoannualericariche,
-                    Trafficoannuo = u.Trafficoannuo,
-                    Ammontarefatturato = u.Ammontarefatturato,
-                    Filler = u.Filler,
-                    Caratteredicontrollo = u.Caratteredicontrollo,
-                }).ToList();
+                                                Tiporecord = u["Tiporecord"].ToString(),
+                                                Cf = u["Cf"].ToString(),
+                                                Cognome = u["Cognome"].ToString(),
+                                                Nome = u["Nome"].ToString(),
+                                                Sesso = u["Sesso"].ToString(),
+                                                Dtnascita = u["Dtnascita"].ToString(),
+                                                Luogonascita = u["Luogonascita"].ToString(),
+                                                Prov = u["Prov"].ToString(),
+                                                Denominazione = u["Denominazione"].ToString(),
+                                                Comunedomicilio = u["Comunedomicilio"].ToString(),
+                                                Siglacomunedomicilio = u["Siglacomunedomicilio"].ToString(),
+                                                EstremiContratto = u["EstremiContratto"].ToString(),
+                                                Tipotariffa = u["Tipotariffa"].ToString(),
+                                                Destinazioneuso = u["Destinazioneuso"].ToString(),
+                                                Tipocontratto = u["Tipocontratto"].ToString(),
+                                                Tipologiautenza = u["Tipologiautenza"].ToString(),
+                                                Datainizio = u["Datainizio"].ToString(),
+                                                Numeroiniziale = u["Numeroiniziale"].ToString(),
+                                                Numerofinale = u["Numerofinale"].ToString(),
+                                                Indirizzo = u["Indirizzo"].ToString(),
+                                                Codicecomune = u["Codicecomune"].ToString(),
+                                                Mesifatturazione = u["Mesifatturazione"].ToString(),
+                                                Costoannualericariche = u["Costoannualericariche"].ToString(),
+                                                Trafficoannuo = u["Trafficoannuo"].ToString(),
+                                                Ammontarefatturato =u["Ammontarefatturato"].ToString(),
+                                                Filler = u["Filler"].ToString(),
+                                                Caratteredicontrollo = u["Caratteredicontrollo"].ToString()
+                                            }).ToList();
 
-                // Ottiene il percorso del desktop
-                string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
+
+                // Scrive i dati su un file di testo
+
+            string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
                 string filePath = Path.Combine(desktopPath, "Ufficio.txt");
 
                 // Cancella il file se esiste già
@@ -62,22 +77,13 @@ namespace FileHelper.Entities
                 // Utilizza FileHelpers per scrivere i dati su un file sul desktop
                 var engine = new FileHelperEngine<UfficioFILE>();
                
-                engine.WriteFile(filePath, ufficioFileList);
+               engine.WriteFile(filePath,ufficioFileList);
 
                 // Aggiunge un nuovo riga dopo ogni record
-                using (var writer = new StreamWriter(filePath, true))
-                {
-                    foreach (var record in ufficioFileList)
-                    {
-                        writer.WriteLine($"{record.Tiporecord}{record.Cf}{record.Cognome}{record.Nome}{record.Sesso}{record.Dtnascita}{record.Luogonascita}{record.Prov}" +
-                                         $"{record.Denominazione}{record.Comunedomicilio}{record.Siglacomunedomicilio}{record.EstremiContratto}{record.Tipotariffa}{record.Destinazioneuso}" +
-                                         $"{record.Tipocontratto}{record.Tipologiautenza}{record.Datainizio}{record.Numeroiniziale}{record.Numerofinale}{record.Indirizzo}{record.Codicecomune}" +
-                                         $"{record.Mesifatturazione}{record.Costoannualericariche}{record.Trafficoannuo}{record.Ammontarefatturato}{record.Filler}{record.Caratteredicontrollo}");
-                    }
-                }
+               
 
                 Console.WriteLine($"Dati scritti su {filePath}");
             }
-        }
+        
     }
 }
