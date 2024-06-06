@@ -95,11 +95,11 @@
     <Compile Include="FrmFatturazione.Designer.cs">
       <DependentUpon>FrmFatturazione.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmElencoChiamatePerCliente.cs">
+    <Compile Include="frmFatturazioneListaChiamatePerCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmElencoChiamatePerCliente.Designer.cs">
-      <DependentUpon>frmElencoChiamatePerCliente.cs</DependentUpon>
+    <Compile Include="frmFatturazioneListaChiamatePerCliente.Designer.cs">
+      <DependentUpon>frmFatturazioneListaChiamatePerCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmDocEntrate.cs">
       <SubType>Form</SubType>
@@ -128,8 +128,8 @@
     <EmbeddedResource Include="FrmDocEntrate.resx">
       <DependentUpon>FrmDocEntrate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmElencoChiamatePerCliente.resx">
-      <DependentUpon>frmElencoChiamatePerCliente.cs</DependentUpon>
+    <EmbeddedResource Include="frmFatturazioneListaChiamatePerCliente.resx">
+      <DependentUpon>frmFatturazioneListaChiamatePerCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmListaDettaglio.resx">
       <DependentUpon>FrmListaDettaglio.cs</DependentUpon>

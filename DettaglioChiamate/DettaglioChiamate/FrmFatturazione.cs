@@ -278,7 +278,7 @@ FROM
 
             dt = fatturazione.DBDT;
 
-
+            dt.Columns.Remove("spese");
 
 
 

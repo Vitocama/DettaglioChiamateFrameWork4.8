@@ -1,6 +1,6 @@
 ﻿namespace DettaglioChiamate
 {
-    partial class frmElencoChiamatePerCliente
+    partial class frmFatturazioneListaChiamatePerCliente
     {
         /// <summary>
         /// Required designer variable.
@@ -57,7 +57,7 @@
             this.label1.Size = new System.Drawing.Size(113, 15);
             this.label1.TabIndex = 1;
             this.label1.Text = "Data di Riferimento";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+    
             // 
             // label3
             // 
@@ -69,7 +69,6 @@
             this.label3.Size = new System.Drawing.Size(86, 15);
             this.label3.TabIndex = 2;
             this.label3.Text = "Codice Cliente";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // dtpDataFatturazione
             // 
@@ -79,7 +78,7 @@
             this.dtpDataFatturazione.Name = "dtpDataFatturazione";
             this.dtpDataFatturazione.Size = new System.Drawing.Size(99, 21);
             this.dtpDataFatturazione.TabIndex = 3;
-            this.dtpDataFatturazione.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+    
             // 
             // dtpFine
             // 
@@ -89,7 +88,7 @@
             this.dtpFine.Name = "dtpFine";
             this.dtpFine.Size = new System.Drawing.Size(104, 20);
             this.dtpFine.TabIndex = 4;
-            this.dtpFine.ValueChanged += new System.EventHandler(this.dtpFine_ValueChanged);
+        
             // 
             // txtCli
             // 
@@ -120,7 +119,7 @@
             this.label2.Size = new System.Drawing.Size(56, 15);
             this.label2.TabIndex = 7;
             this.label2.Text = "Periodo :";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+      
             // 
             // chkseleziona
             // 
@@ -174,9 +173,7 @@
             this.chkListContratti.Location = new System.Drawing.Point(442, 19);
             this.chkListContratti.Name = "chkListContratti";
             this.chkListContratti.Size = new System.Drawing.Size(120, 94);
-            this.chkListContratti.TabIndex = 12;
-            this.chkListContratti.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
-            // 
+            this.chkListContratti.TabIndex = 12;            // 
             // dataGridViewListaClienti
             // 
             this.dataGridViewListaClienti.AllowUserToAddRows = false;
