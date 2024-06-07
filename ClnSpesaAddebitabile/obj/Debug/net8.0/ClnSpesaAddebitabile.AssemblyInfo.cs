@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ClnSpesaAddebitabile")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0bb497831286913a5eef2c65f7e4873b477160c5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+106639530368ab46cb97ecde0ca8e02ffec9eaaa")]
 [assembly: System.Reflection.AssemblyProductAttribute("ClnSpesaAddebitabile")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ClnSpesaAddebitabile")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

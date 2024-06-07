@@ -16,8 +16,8 @@ namespace DettaglioChiamate
     {
 
         // SqlConnection conn = new SqlConnection("Data Source=SERVER2019;Initial Catalog=Voip1;Persist Security Info=True;User ID=sa;Password=Caronte00;TrustServerCertificate=True;Encrypt=False");
-        string connection = "Server=VMWARE\\MSSQLSERVER2019;Database=kongNew;Trusted_Connection=True;Encrypt=false;";
-        // string connection = "Server=LAPTOP-8OH69FI3\\SQLEXPRESS01;Database=kongnew;Trusted_Connection=True;Encrypt=false";
+        // string connection = "Server=VMWARE\\MSSQLSERVER2019;Database=kongNew;Trusted_Connection=True;Encrypt=false;";
+        string connection = "Server=LAPTOP-8OH69FI3\\SQLEXPRESS01;Database=kongnew;Trusted_Connection=True;Encrypt=false";
 
         private int mesiDiFatturazione = 2;
 
@@ -972,6 +972,8 @@ JOIN VoiPtmpFatturazioneclone ON VoiPofferte.idofferta = VoiPtmpFatturazioneclon
         {
            
 
+
+
             if (ClnNchiamate() != "")
             {
                 return;
@@ -1034,6 +1036,26 @@ JOIN VoiPtmpFatturazioneclone ON VoiPofferte.idofferta = VoiPtmpFatturazioneclon
 
             }
 
+            if(ClnNtipo() != "")
+            {
+                return;
+            }
+
+        }
+
+        private string ClnNtipo()
+        {
+            sql = @"UPDATE
+                 SET ntipo = voipdettaglio.ntipo
+                 FROM voiptmpfatturazione 
+                 JOIN voipdettaglio 
+                 ON voipdettaglio.id = iddettaglio";
+            fatturazione.ExecQuery(sql);
+            if (fatturazione.HasException(true))
+            {
+                return fatturazione.Exception;
+            }
+            return "";
 
         }
     }

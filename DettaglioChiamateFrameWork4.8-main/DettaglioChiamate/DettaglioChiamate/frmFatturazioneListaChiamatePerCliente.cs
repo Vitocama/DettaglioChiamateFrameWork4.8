@@ -24,9 +24,9 @@ namespace DettaglioChiamate
         //string cnKong = " Server=VMWARE\\MSSQLSERVER2019;Database=kongNew;Trusted_Connection=True;Encrypt=false;";
 
 
-        SQLControl fatturazione = new SQLControl("Server = VMWARE\\MSSQLSERVER2019; Database=kongNew;Trusted_Connection=True;Encrypt=false;");
+       // SQLControl fatturazione = new SQLControl("Server = VMWARE\\MSSQLSERVER2019; Database=kongNew;Trusted_Connection=True;Encrypt=false;");
 
-       // SQLControl fatturazione = new SQLControl("Data Source=LAPTOP-8OH69FI3\\SQLEXPRESS01;Initial Catalog=kongnew;Integrated Security=True;Encrypt=False;");
+        SQLControl fatturazione = new SQLControl("Data Source=LAPTOP-8OH69FI3\\SQLEXPRESS01;Initial Catalog=kongnew;Integrated Security=True;Encrypt=False;");
 
 
 
@@ -958,14 +958,34 @@ INSERT INTO [dbo].[VoiptmpListaChiamate] (
 
             }
 
+            if (ClnNTIPO() != "")
+            {
+                Cursor = Cursors.Default;
+                return;
 
-           
+            }
+
+
+
 
 
 
         }
 
-
+        private string ClnNTIPO()
+        {
+            sql = @"UPDATE
+                 SET ntipo = voipdettaglio.ntipo
+                 FROM voiptmpfatturazione 
+                 JOIN voipdettaglio 
+                 ON voipdettaglio.id = iddettaglio";
+            fatturazione.ExecQuery(sql);
+            if (fatturazione.HasException(true))
+            {
+                return fatturazione.Exception;
+            }
+            return "";
+        }
 
         private string PplTabFattClientClone()
         {
