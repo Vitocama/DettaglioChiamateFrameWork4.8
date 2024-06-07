@@ -24,9 +24,9 @@ namespace DettaglioChiamate
         //string cnKong = " Server=VMWARE\\MSSQLSERVER2019;Database=kongNew;Trusted_Connection=True;Encrypt=false;";
 
 
-        //SQLControl fatturazione = new SQLControl("Server = VMWARE\\MSSQLSERVER2019; Database=kongNew;Trusted_Connection=True;Encrypt=false;");
+        SQLControl fatturazione = new SQLControl("Server = VMWARE\\MSSQLSERVER2019; Database=kongNew;Trusted_Connection=True;Encrypt=false;");
 
-        SQLControl fatturazione = new SQLControl("Data Source=LAPTOP-8OH69FI3\\SQLEXPRESS01;Initial Catalog=kongnew;Integrated Security=True;Encrypt=False;");
+       // SQLControl fatturazione = new SQLControl("Data Source=LAPTOP-8OH69FI3\\SQLEXPRESS01;Initial Catalog=kongnew;Integrated Security=True;Encrypt=False;");
 
 
 
