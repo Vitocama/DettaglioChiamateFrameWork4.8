@@ -11,7 +11,7 @@ namespace DettagliChiamate
 {
     internal class SQLControl
     {
-        private SqlConnection DBCon = new SqlConnection("Server=Server2019;Database=KONGNEW;User=sa;Pwd=Caronte00;");
+        private SqlConnection DBCon = new SqlConnection("");
         private SqlCommand DBCmd;
 
         // DB DATA

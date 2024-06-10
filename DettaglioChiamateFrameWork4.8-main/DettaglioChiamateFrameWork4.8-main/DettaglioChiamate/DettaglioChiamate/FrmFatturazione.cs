@@ -1045,7 +1045,7 @@ JOIN VoiPtmpFatturazioneclone ON VoiPofferte.idofferta = VoiPtmpFatturazioneclon
 
         private string ClnNtipo()
         {
-            sql = @"UPDATE
+            sql = @"UPDATE voiptmpFatturazione
                  SET ntipo = voipdettaglio.ntipo
                  FROM voiptmpfatturazione 
                  JOIN voipdettaglio 
