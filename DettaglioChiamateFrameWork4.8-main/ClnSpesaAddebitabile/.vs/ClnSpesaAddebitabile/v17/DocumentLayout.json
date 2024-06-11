@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\VMware\\Desktop\\DetaglioChiamateFrame4.8\\ClnSpesaAddebitabile\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2D214580-2557-4D89-BC97-8782F33C4E7C}|ClnSpesaAddebitabile.csproj|c:\\users\\vmware\\desktop\\detagliochiamateframe4.8\\clnspesaaddebitabile\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D214580-2557-4D89-BC97-8782F33C4E7C}|ClnSpesaAddebitabile.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\VMware\\Desktop\\DetaglioChiamateFrame4.8\\ClnSpesaAddebitabile\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\VMware\\Desktop\\DetaglioChiamateFrame4.8\\ClnSpesaAddebitabile\\Program.cs*",
+              "RelativeToolTip": "Program.cs*",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAowBwAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-07T13:10:36.941Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
